@@ -1,9 +1,21 @@
 import { StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
-import Face from "../assets/images/face.png";
+import { Text, View } from '../../components/Themed';
+import { RootTabScreenProps } from '../../types';
+import Face from "../../assets/images/face.png";
+import Categories from './Categories';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'Home'>) {
+const categories = [
+  {name: "aal", url: "jsjjs"},
+  {name: "aal", url: "jsjjs"},
+  {name: "aal", url: "jsjjs"},
+  {name: "aal", url: "jsjjs"},
+  {name: "aal", url: "jsjjs"},
+  {name: "aal", url: "jsjjs"},
+  {name: "aal", url: "jsjjs"},
+  {name: "aal", url: "jsjjs"},
+]
+
+export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
   return (
     <View style={styles.container}>
       <View style={styles.topSectionContainer} lightColor="#4FAF5A" darkColor="#4FAF5A">
@@ -18,6 +30,12 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'Home'>)
           <Image source={Face} />
         </View>
       </View>
+
+      <View style={{marginTop: 24}}>
+        <Categories categories={categories} />
+      </View>
+
+
     </View>
   );
 }
@@ -52,7 +70,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
     lineHeight: 25,
-    color:"#ffffff"
+    color: "#ffffff"
   },
   topSectionContainerButton: {
     width: 89,
@@ -66,6 +84,6 @@ const styles = StyleSheet.create({
   topSectionContainerButtonText: {
     fontSize: 13,
     fontWeight: "700",
-    color:"#ffffff"
+    color: "#ffffff"
   },
 });
