@@ -3,6 +3,7 @@ import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 import Face from "../../assets/images/face.png";
 import Categories from './Categories';
+import Products from './Products';
 
 const categories = [
   {name: "aal", url: "jsjjs"},
@@ -35,7 +36,11 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
         <Categories categories={categories} />
       </View>
 
+      <View style={{marginTop: 24}}>
+        <Text style={styles.all}>All</Text>
 
+        <Products />
+      </View>
     </View>
   );
 }
@@ -86,4 +91,9 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#ffffff"
   },
+  all: {
+    fontWeight: "700",
+    fontSize: 18, 
+    marginBottom: 10
+  }
 });

@@ -14,7 +14,7 @@ const CategoryItem:FC<Iprops> = ({ name, url }) => {
             <View style={styles.imageContainer}>
                 <Image source={Coffee} />
             </View>
-            <Text style={styles.text} lightColor="2D4F4D" darkColor='#fff'>Coffee</Text> 
+            <Text style={styles.text}>Coffee</Text> 
         </View>
     )
 }
@@ -35,9 +35,11 @@ const styles = StyleSheet.create({
         height: 24,
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: 12
     },
     text: {
         fontSize: 12,
-        fontWeight: "700"
+        fontWeight: "700",
+        marginTop: 12
     }
 })
