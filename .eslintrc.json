@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "prettier", "prettier/react"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-native"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "no-use-before-define": ["error", {"variables": false}],
+    "react/prop-types": [
+      "error",
+      {"ignore": ["navigation", "navigation.navigate"]}
+    ],
+    "react/react-in-jsx-scope": "off",
+    "camelcase": "off",
+    "spaced-comment": "error",
+    "quotes": ["error", "single"],
+    "no-duplicate-imports": "error",
+    "no-undef": "off",
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "linebreak-style": "off"
+  }
+}
