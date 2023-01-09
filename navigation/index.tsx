@@ -20,6 +20,11 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
+import HomeSvg from "../components/Svgs/home-fill";
+import SearchSvg from "../components/Svgs/search-outline";
+import FileSvg from "../components/Svgs/file-outline";
+import DotsSvg from "../components/Svgs/dots";
+
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
@@ -59,55 +64,38 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
       <BottomTab.Screen
-        name="TabOne"
+        name="Home"
         component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
+        options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           headerTitle: () => <CustomHeader navigation={navigation}  />,
-          // title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          // headerRight: () => (
-          //   <Pressable
-          //     onPress={() => navigation.navigate('Modal')}
-          //     style={({ pressed }) => ({
-          //       opacity: pressed ? 0.5 : 1,
-          //     })}>
-          //     <FontAwesome
-          //       name="info-circle"
-          //       size={25}
-          //       color={Colors[colorScheme].text}
-          //       style={{ marginRight: 15 }}
-          //     />
-          //   </Pressable>
-          // ),
+          tabBarIcon: ({ color }) => <HomeSvg color={color} height={22} width={24} />,
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Search"
         component={TabTwoScreen}
         options={{
           title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <SearchSvg color={color} height={21} width={21} />,
         }}
       />
       <BottomTab.Screen
-        name="TabThree"
+        name="Orders"
         component={TabTwoScreen}
         options={{
-          title: 'Tab three',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <FileSvg color={color} height={21} width={24} />,
         }}
       />
       <BottomTab.Screen
-        name="TabFour"
+        name="Account"
         component={TabTwoScreen}
         options={{
-          title: 'Tab four',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <DotsSvg color={color} height={6} width={18} />,
         }}
       />
     </BottomTab.Navigator>
