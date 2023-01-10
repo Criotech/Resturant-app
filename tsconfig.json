@@ -3,5 +3,11 @@
   "compilerOptions": {
     "strict": true
   },
-  "include": ["index.d.ts", "components/**/*", "screens/**/*", "assets/images"]
+  "include": [
+    "index.d.ts",
+    "react-native-svg.d.ts",
+    "components/**/*",
+    "screens/**/*",
+    "assets/images"
+  ]
 }

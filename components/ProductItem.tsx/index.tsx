@@ -1,76 +1,42 @@
 import React, {FC} from 'react';
-import {StyleSheet, Image, SafeAreaView, FlatList} from 'react-native';
+import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {doughnuts} from '../../assets/images';
 import {View, Text} from '../Themed';
 
-interface Iprops {
-  item: {
-    name: string;
-    price: string;
-    rating: string;
-    id: number;
-  };
+interface Product {
+  name: string;
+  price: string;
+  rating: string;
+  id: string;
 }
 
-const DATA: Iprops['item'][] = [
-  {
-    name: 'Special doughnuts for primates',
-    price: '#5,000',
-    rating: '4.5/5',
-    id: 1,
-  },
-  {
-    name: 'Special doughnuts for primates',
-    price: '#5,000',
-    rating: '4.5/5',
-    id: 2,
-  },
-  {
-    name: 'Special doughnuts for primates',
-    price: '#5,000',
-    rating: '4.5/5',
-    id: 3,
-  },
-  {
-    name: 'Special doughnuts for primates',
-    price: '#5,000',
-    rating: '4.5/5',
-    id: 4,
-  },
-  {
-    name: 'Special doughnuts for primates',
-    price: '#5,000',
-    rating: '4.5/5',
-    id: 5,
-  },
-];
-
-const Item = ({item}: Iprops) => (
-  <View style={styles.container}>
-    <View style={styles.imageContainer}>
-      <Image source={doughnuts} />
-    </View>
-    <View style={styles.content}>
-      <Text style={styles.contentText1}>{item.name}</Text>
-      <Text style={styles.contentText2}>{item.price}</Text>
-    </View>
-    <View style={styles.ratingContainer}>
-      <Text style={{color: '#fff'}}>{item.rating}</Text>
-    </View>
-  </View>
-);
-
-const ProductItem: FC<{}> = () => {
-  const renderItem = ({item}: {item: Iprops['item']}) => <Item item={item} />;
-
+const ProductItem: FC<{product: Product}> = ({product}) => {
   return (
-    <SafeAreaView>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image source={doughnuts} />
+      </View>
+      <View style={styles.content}>
+        <Text style={styles.contentText1}>{product.name}</Text>
+        <Text style={styles.contentText2}>{product.price}</Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <View style={styles.ratingContainer} lightColor="#f7f7f7">
+            <Text style={{color: '#fff'}}>{product.rating}</Text>
+          </View>
+          <TouchableOpacity style={styles.addBtn}>
+            <Text lightColor="#fff" darkColor="#fff" style={styles.addBtnText}>
+              Add to cart
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
   );
 };
 

@@ -16,6 +16,75 @@ const categories = [
   {name: 'aal', url: 'jsjjs'},
 ];
 
+const products = [
+  {
+    name: 'Special doughnuts for primatesasss',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '1',
+  },
+  {
+    name: 'Special doughnuts for primatess',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '2',
+  },
+  {
+    name: 'Special doughnuts for primates',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '3',
+  },
+  {
+    name: 'Special doughnuts for primates',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '4',
+  },
+  {
+    name: 'Special doughnuts for primates',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '5',
+  },
+  {
+    name: 'Special doughnuts for primates',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '6',
+  },
+  {
+    name: 'Special doughnuts for primates',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '7',
+  },
+  {
+    name: 'Special doughnuts for primates',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '8',
+  },
+  {
+    name: 'Special doughnuts for primates',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '9',
+  },
+  {
+    name: 'Special doughnuts for primates',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '10',
+  },
+  {
+    name: 'Special doughnuts for primateshaha',
+    price: '#5,000',
+    rating: '4.5/5',
+    id: '11',
+  },
+];
+
 export default function Home({navigation}: RootTabScreenProps<'Home'>) {
   return (
     <View style={styles.container}>
@@ -45,7 +114,7 @@ export default function Home({navigation}: RootTabScreenProps<'Home'>) {
       <View style={{marginTop: 24}}>
         <Text style={styles.all}>All</Text>
 
-        <Products />
+        <Products products={products} />
       </View>
     </View>
   );
@@ -54,11 +123,11 @@ export default function Home({navigation}: RootTabScreenProps<'Home'>) {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
-    paddingVertical: 20,
-    flex: 1,
+    paddingTop: 16,
+    paddingBottom: 16,
+    marginBottom: 16,
   },
   topSectionContainer: {
-    height: 124,
     width: '100%',
     borderRadius: 8,
     paddingLeft: 16,
@@ -100,6 +169,5 @@ const styles = StyleSheet.create({
   all: {
     fontWeight: '700',
     fontSize: 18,
-    marginBottom: 10,
   },
 });
