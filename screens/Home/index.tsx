@@ -1,4 +1,4 @@
-import { StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import { RootTabScreenProps } from '../../types';
 import Face from "../../assets/images/face.png";
@@ -14,6 +14,60 @@ const categories = [
   {name: "aal", url: "jsjjs"},
   {name: "aal", url: "jsjjs"},
   {name: "aal", url: "jsjjs"},
+]
+
+const products = [
+  {
+      name: "jsjks",
+      price: "string",
+      rating: 3,
+      id: "string",
+      url: "string",
+  },
+  {
+    name: "jsjks",
+    price: "string",
+    rating: 3,
+    id: "aa",
+    url: "string",
+},{
+  name: "jsjks",
+  price: "string",
+  rating: 3,
+  id: "dd",
+  url: "string",
+},{
+  name: "jsjks",
+  price: "string",
+  rating: 3,
+  id: "qq",
+  url: "string",
+},{
+  name: "jsjks",
+  price: "string",
+  rating: 3,
+  id: "ccb",
+  url: "string",
+},{
+  name: "jsjks",
+  price: "string",
+  rating: 3,
+  id: "pop",
+  url: "string",
+},
+{
+  name: "jsjks",
+  price: "string",
+  rating: 3,
+  id: "poap",
+  url: "string",
+},{
+  name: "jsjks",
+  price: "string",
+  rating: 3,
+  id: "poqp",
+  url: "string",
+},
 ]
 
 export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
@@ -39,7 +93,7 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
       <View style={{marginTop: 24}}>
         <Text style={styles.all}>All</Text>
 
-        <Products />
+        <Products products={products} />
       </View>
     </View>
   );

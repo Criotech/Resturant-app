@@ -3,7 +3,15 @@ import { StyleSheet, Image, TouchableOpacity } from "react-native";
 import { View, Text } from "../Themed";
 import Dougnout from "../../assets/images/dougnout.png";
 
-const ProductItem: FC<{}> = () => {
+interface Product {
+    name: string;
+    price: string;
+    rating: number;
+    id: string;
+    url: string;
+}
+
+const ProductItem: FC<{ product: Product }> = ({ product }) => {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>

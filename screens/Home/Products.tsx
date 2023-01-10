@@ -1,21 +1,24 @@
 import React, { FC } from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 import { View } from "../../components/Themed";
 import ProductItem from '../../components/ProductItem.tsx';
 
-interface Iprops {
+interface Product {
+    name: string;
+    price: string;
+    rating: number;
+    id: string;
+    url: string;
 }
 
-const Products: FC<Iprops> = ({ }) => {
+const Products:FC<{ products: Product[] }> = ({ products }) => {
     return (
         <View style={styles.container}>
-            {
-                [1,2, 3].map((item, i) => {
-                    return (
-                        <ProductItem key={i} />
-                    )
-                })
-            }
+            <FlatList
+                data={products}
+                renderItem={({ item }) => (<ProductItem product={item} />)}
+                keyExtractor={(item) => item.id}
+            />
         </View>
     )
 }
